@@ -1,5 +1,4 @@
 {
-    "private": true,
     "displayName": "Plugin Name",
     "name": "homebridge-jablotron-mqtt",
     "version": "2.0.0",
