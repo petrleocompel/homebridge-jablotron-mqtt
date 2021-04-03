@@ -1,0 +1,22 @@
+{
+    "bridge": {
+        "name": "Homebridge",
+        "username": "FF:FF:FF:FF:FF",
+        "port": 59666,
+        "pin": "000-00-666"
+    },
+    "description": "This is an example configuration file with one fake accessory and one fake platform. You can use this as a template for creating your own configuration file containing devices you actually own.",
+    "accessories": [
+        {
+            "accessory": "JablotronMqttSecurity",
+            "name": "Jablotron",
+            "subtype": "Doma",
+            "model": "JA-60 Comfort",
+            "mqttUrl": "mqtt://192.168.0.250",
+            "mqttTopicPrefix": "alarm",
+            "securityCode": "0000",
+            "allowCommunication": true
+        }
+    ],
+    "platforms": []
+}

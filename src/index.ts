@@ -1,11 +1,8 @@
-import { API } from 'homebridge';
+import {API} from 'homebridge';
 
-import { PLATFORM_NAME } from './settings';
-import { ExampleHomebridgePlatform } from './platform';
+import {PLUGIN_NAME, ACCESSORY_NAME} from './settings';
+import {JbMqttAccPlg} from './accessory';
 
-/**
- * This method registers the platform with Homebridge
- */
 export = (api: API) => {
-  api.registerPlatform(PLATFORM_NAME, ExampleHomebridgePlatform);
+    api.registerAccessory(PLUGIN_NAME, ACCESSORY_NAME, JbMqttAccPlg);
 };

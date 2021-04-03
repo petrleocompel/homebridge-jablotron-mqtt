@@ -1,16 +1,54 @@
 {
-  "pluginAlias": "ExampleHomebridgePlugin",
-  "pluginType": "platform",
-  "singular": true,
-  "schema": {
-    "type": "object",
-    "properties": {
-      "name": {
-        "title": "Name",
-        "type": "string",
-        "required": true,
-        "default": "Example Dynamic Platform"
-      }
+    "pluginAlias": "JablotronMqttSecurity",
+    "pluginType": "accessory",
+    "singular": false,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "title": "Name",
+                "type": "string",
+                "required": true
+            },
+            "model": {
+                "title": "Model",
+                "type": "string",
+                "default": "JA-60 Comfort",
+                "description": "Model which will be shown in info.",
+                "required": false
+            },
+            "subtype": {
+                "title": "Sub Type",
+                "type": "string",
+                "description": "Sub type",
+                "required": false
+            },
+            "mqttUrl": {
+                "title": "MQTT Url",
+                "type": "string",
+                "default": "mqtt://",
+                "description": "Mqtt server scheme url",
+                "required": true
+            },
+            "mqttTopicPrefix": {
+                "title": "MQTT Topic prefix",
+                "type": "string",
+                "description": "Mqtt topic prefix",
+                "required": false
+            },
+            "securityCode": {
+                "title": "Security code",
+                "type": "string",
+                "description": "Security code for disarming",
+                "required": true
+            },
+            "allowCommunication": {
+                "title": "Allow communication",
+                "type": "boolean",
+                "default": true,
+                "description": "For testing purposes",
+                "required": true
+            }
+        }
     }
-  }
 }
