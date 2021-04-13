@@ -22,6 +22,7 @@ enum JbMqttCustomConfigKeys {
     MQTT_START_CMD = 'startCmd',
     MQTT_START_PARAM = 'startParameter',
     MODEL = 'MODEL',
+    ALLOW_COMMUNICATION = 'allowCommunication',
 }
 
 export class JbMqttAccPlg implements AccessoryPlugin {
@@ -79,6 +80,7 @@ export class JbMqttAccPlg implements AccessoryPlugin {
         this.mqttTopicPrefix = config[JbMqttCustomConfigKeys.MQTT_TOPIC_PREFIX] || '';
         this.mqttTopics = [this.getTopic(AlarmTopic.RAW), this.getTopic(AlarmTopic.MODE)];
         this.client = mqtt.connect(this.mqttUrl, this.mqttOptions);
+        this.allowCommunication = config[JbMqttCustomConfigKeys.ALLOW_COMMUNICATION];
 
         this.log('Subsribing to', this.mqttTopics);
         this.client.subscribe(this.mqttTopics);
